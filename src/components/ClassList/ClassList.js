@@ -21,7 +21,7 @@ export default class ClassList extends Component {
   render() {
     const mappedStudents = this.state.students.map(elem => {
       return (
-      <div>
+        <div>
         <Link to={`/student/${elem.id}`} key={elem.id}>
         <h3>{elem.first_name} {elem.last_name}</h3>
         </Link>
@@ -29,8 +29,11 @@ export default class ClassList extends Component {
       )
     })
     return (
-
+      
       <div className="box">
+      <Link exact to='/'>
+      <button>Back</button>
+      </Link>
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:</h2>
         {mappedStudents}
